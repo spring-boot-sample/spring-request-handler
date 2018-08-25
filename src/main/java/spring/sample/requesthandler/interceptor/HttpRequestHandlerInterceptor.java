@@ -16,7 +16,8 @@ public class HttpRequestHandlerInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 共通処理を記述する。
         System.out.println("preHandle "+request.getRequestURI());
-        return request.getRequestURI().split("/")[2].equals("100")?true:false;
+        final String[] uriPaths = request.getRequestURI().split("/");
+        return  uriPaths[1].equals("test") && uriPaths[2].equals("100")?true:false;
 
 
     }

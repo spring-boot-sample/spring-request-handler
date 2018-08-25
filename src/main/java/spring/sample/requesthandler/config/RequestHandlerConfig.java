@@ -22,6 +22,6 @@ public class RequestHandlerConfig extends WebMvcConfigurationSupport {
      */
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(requestHandlerInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(requestHandlerInterceptor()).addPathPatterns("/test/*");
     }
 }
